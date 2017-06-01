@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="layout :: head">
+</head>
+<body>
+	<div th:replace="layout :: header"></div>
+	<div class="col-12">
+		<br />
+		<div class="col-2"></div>
+		<div class="col-4 vertikal-line-right">
+			<h2 class="right">Register</h2>
+			
+			<form th:object="${userbaru}" th:action="@{/register}" method="post">
+				<input type="hidden" th:field="*{id}"/>
+				<input type="text" class="form-input" placeholder="Nama" th:field="*{nama_user}" required="required"/>
+				<select class="form-select" th:field="*{jk_user}">
+					<option value="" disabled="disabled" selected="selected">--Jenis Kelamin--</option>
+					<option value="Laki-laki">Laki-laki</option>
+					<option value="Perempuan">Perempuan</option>
+				</select>
+				<input type="text" class="form-input" placeholder="Alamat" th:field="*{alamat}"/>
+				<input type="text" class="form-input" placeholder="Mobile Phone" th:field="*{mobile_ph}"/>
+				<input type="text" class="form-input" placeholder="E-mail Address" th:field="*{email}" required="required"/>
+				<input type="text" class="form-input" placeholder="Username" th:field="*{username}" name="user" required="required"/>
+				<input type="password" class="form-input" placeholder="Password" th:field="*{password}" name="pass" required="required"/>
+				<input type="submit" value="Register" class="btn-outline right" />
+			</form>
+			
+		</div>
+		<div class="col-4">
+			<h2 class="left">Sign In</h2>
+			<form th:action="@{/login}" method="post">
+				<input type="text" class="form-input" placeholder="Username" name="user" required="required"/>
+				<input type="password" class="form-input" placeholder="Password" name="pass" required="required"/>
+				<input type="submit" value="Sign In" class="btn-outline right" />
+			</form>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

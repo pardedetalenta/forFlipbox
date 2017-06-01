@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="layout :: head">
+</head>
+<body>
+	<div th:replace="layout ::header"></div>
+	<div class="container">
+      <div class="row">
+      <div class="col-md-4  toppad  pull-right col-md-offset-5 ">
+			<a>Logout</a>
+       <br></br>      
+       </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+			<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title center">Edit Profile</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> </div>
+               
+                <div class=" col-md-6 col-lg-12 "> 
+                  <form>
+				<input type="text" class="form-input" placeholder="Nama" th:field="*{nama_user}" required="required"/>
+				<select class="form-select" th:field="*{jk_user}">
+					<option value="" disabled="disabled" selected="selected">--Jenis Kelamin--</option>
+					<option value="Laki-laki">Laki-laki</option>
+					<option value="Perempuan">Perempuan</option>
+				</select>
+				<input type="text" class="form-input" placeholder="Alamat" th:field="*{alamat}"/>
+				<input type="text" class="form-input" placeholder="Mobile Phone" th:field="*{mobile_ph}"/>
+				<input type="text" class="form-input" placeholder="E-mail Address" th:field="*{email}" required="required"/>
+				<input type="text" class="form-input" placeholder="Username" th:field="*{username}" name="user" required="required"/>
+				<input type="password" class="form-input" placeholder="Password" th:field="*{password}" name="pass" required="required"/>
+				<input type="submit" value="Save Profile" class="btn-outline right" />
+			</form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

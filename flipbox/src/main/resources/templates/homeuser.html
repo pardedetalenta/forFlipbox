@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="layout :: head">
+</head>
+<body>
+	<div th:replace="layout ::header"></div>
+	<div class="container">
+      <div class="row">
+      <div class="col-md-4  toppad  pull-right col-md-offset-5 ">
+			<a href="/logout" >Logout</a>
+       <br></br>      
+       </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+			<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 th:if="${nama != null}" th:text="${nama}" class="panel-title center"></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> </div>
+               
+                <div class=" col-md-6 col-lg-12 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Username:</td>
+                        <td th:if="${username != null}" th:text="${username}"></td>
+                      </tr>
+                      <tr>
+                        <td>Jenis Kelamin:</td>
+                        <td th:if="${jk != null}" th:text="${jk}"></td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td th:if="${homeadr != null}" th:text="${homeadr}"></td>
+                      </tr>
+                      <tr>
+                        <td>Email Address:</td>
+                        <td th:if="${emailadr != null}" th:text="${emailadr}"></td>
+                      </tr>
+                      <tr>
+                        <td>Phone Number</td>
+                        <td th:if="${phone != null}" th:text="${phone}"></td>
+                       </tr> 
+                        </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/edit"><input type="submit" value="Edit Profile" class="btn-outline right"/></a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

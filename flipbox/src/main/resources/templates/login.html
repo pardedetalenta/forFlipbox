@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="layout :: head">
+</head>
+<body>
+	<div th:replace="layout :: header"></div>
+	<div class="col-12">
+		<br />
+		<div class="col-2"></div>
+		<div class="col-4">
+		<h1>Silahkan Login</h1>
+			<h2 class="left">Sign In</h2>
+			<form th:action="@{/login}" method="post">
+				<input type="text" class="form-input" placeholder="Username" name="user" required="required"/>
+				<input type="password" class="form-input" placeholder="Password" name="pass" required="required"/>
+				<input type="submit" value="Sign In" class="btn-outline right" />
+			</form>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
